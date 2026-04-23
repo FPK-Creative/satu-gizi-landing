@@ -9,6 +9,7 @@ import { defineConfig, fontProviders } from 'astro/config';
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://satugizi.id',
+	base: '/satu-gizi-landing/',
 	integrations: [
 		mdx(),
 		sitemap({
