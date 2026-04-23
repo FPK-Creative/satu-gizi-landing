@@ -1,6 +1,4 @@
 ---
-import FAQAccordion from '../react/FAQAccordion.tsx';
-
 const faqItems = [
 	{
 		question: 'Apakah benar-benar gratis untuk SPPG MBG?',
@@ -53,8 +51,71 @@ const faqItems = [
 			</h2>
 		</div>
 
-		<div data-reveal>
-			<FAQAccordion client:visible items={faqItems} />
+		<div data-reveal class="divide-y divide-sg-gray-light" id="faq-accordion">
+			{faqItems.map((item, index) => (
+				<div class="faq-item">
+					<button
+						class="w-full flex items-center justify-between py-4 sm:py-5 text-left group"
+						aria-expanded="false"
+						data-faq-toggle={index}
+					>
+						<span class="text-sm sm:text-base font-medium text-sg-charcoal pr-4 group-hover:text-sg-green transition-colors">
+							{item.question}
+						</span>
+						<span class="shrink-0 w-6 h-6 flex items-center justify-center text-sg-gray faq-icon transition-transform duration-300">
+							<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+							</svg>
+						</span>
+					</button>
+					<div class="faq-answer overflow-hidden max-h-0 transition-all duration-300">
+						<p class="text-sm text-sg-gray leading-relaxed pb-4 sm:pb-5">
+							{item.answer}
+						</p>
+					</div>
+				</div>
+			))}
 		</div>
 	</div>
 </section>
+
+<script>
+	const accordion = document.getElementById('faq-accordion');
+	if (accordion) {
+		const buttons = accordion.querySelectorAll('[data-faq-toggle]');
+		buttons.forEach((btn) => {
+			btn.addEventListener('click', () => {
+				const item = btn.closest('.faq-item');
+				const answer = item?.querySelector('.faq-answer');
+				const icon = btn.querySelector('.faq-icon');
+				const isOpen = btn.getAttribute('aria-expanded') === 'true';
+
+				// Close all others
+				buttons.forEach((otherBtn) => {
+					if (otherBtn !== btn) {
+						const otherItem = otherBtn.closest('.faq-item');
+						const otherAnswer = otherItem?.querySelector('.faq-answer');
+						const otherIcon = otherBtn.querySelector('.faq-icon');
+						otherBtn.setAttribute('aria-expanded', 'false');
+						otherAnswer?.classList.remove('max-h-96');
+						otherAnswer?.classList.add('max-h-0');
+						otherIcon?.classList.remove('rotate-45');
+					}
+				});
+
+				// Toggle current
+				if (isOpen) {
+					btn.setAttribute('aria-expanded', 'false');
+					answer?.classList.remove('max-h-96');
+					answer?.classList.add('max-h-0');
+					icon?.classList.remove('rotate-45');
+				} else {
+					btn.setAttribute('aria-expanded', 'true');
+					answer?.classList.remove('max-h-0');
+					answer?.classList.add('max-h-96');
+					icon?.classList.add('rotate-45');
+				}
+			});
+		});
+	}
+</script>
