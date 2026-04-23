@@ -9,7 +9,31 @@ import { defineConfig, fontProviders } from 'astro/config';
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://satugizi.id',
-	integrations: [mdx(), sitemap(), react()],
+	integrations: [
+		mdx(),
+		sitemap({
+			serialize(item) {
+				if (item.url.includes('/login') || item.url.includes('/register') || item.url.includes('/demo')) {
+					return undefined;
+				}
+				if (/\/blog\/.+/.test(new URL(item.url).pathname)) {
+					item.priority = 0.7;
+					item.changefreq = 'monthly';
+				} else if (item.url.endsWith('/blog/')) {
+					item.priority = 0.8;
+					item.changefreq = 'weekly';
+				} else if (item.url.endsWith('/about/')) {
+					item.priority = 0.5;
+					item.changefreq = 'monthly';
+				} else if (new URL(item.url).pathname === '/') {
+					item.priority = 1.0;
+					item.changefreq = 'weekly';
+				}
+				return item;
+			},
+		}),
+		react(),
+	],
 	vite: {
 		plugins: [tailwindcss()],
 	},

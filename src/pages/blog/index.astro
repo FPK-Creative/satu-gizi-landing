@@ -5,17 +5,29 @@ import BaseHead from '../../components/BaseHead.astro';
 import Footer from '../../components/Footer.astro';
 import FormattedDate from '../../components/FormattedDate.astro';
 import Header from '../../components/Header.astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
+import { breadcrumbSchema } from '../../utils/schema';
+import { SITE_URL } from '../../consts';
 
-const posts = (await getCollection('blog')).sort(
-	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-);
+const title = 'Blog Gizi — Panduan SPPG, Tips Nutrisi & Edukasi MBG | Satu Gizi';
+const description =
+	'Artikel dan panduan seputar gizi, manajemen SPPG MBG, tips nutrisi, dan edukasi pangan untuk ahli gizi, dietisien, dan pengelola dapur satuan pelayanan di Indonesia.';
+
+const schemas = [
+	breadcrumbSchema([
+		{ name: 'Beranda', url: SITE_URL },
+		{ name: 'Blog', url: `${SITE_URL}/blog/` },
+	]),
+];
+
+const posts = (await getCollection('blog'))
+	.filter((post) => !post.data.draft)
+	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
 
 <!doctype html>
 <html lang="id">
 	<head>
-		<BaseHead title={`Blog — ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
+		<BaseHead title={title} description={description} schemas={schemas} />
 	</head>
 	<body>
 		<Header />

@@ -1,6 +1,9 @@
 {
-  "name": "Satu Gizi Tools",
+  "name": "Satu Gizi — Platform MBG & Kalkulator Gizi Indonesia",
   "short_name": "Satu Gizi",
+  "description": "Platform gratis untuk pengelola SPPG MBG: perencanaan menu, analisis gizi, RAB otomatis, dan kalkulator klinis untuk ahli gizi.",
+  "start_url": "/",
+  "lang": "id",
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",
@@ -15,7 +18,7 @@
       "purpose": "maskable"
     }
   ],
-  "theme_color": "#ffffff",
-  "background_color": "#ffffff",
+  "theme_color": "#2D7A3E",
+  "background_color": "#FAFDF7",
   "display": "standalone"
 }

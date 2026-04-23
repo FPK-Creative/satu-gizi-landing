@@ -10,9 +10,12 @@ import Pricing from '../components/sections/Pricing.astro';
 import Testimonials from '../components/sections/Testimonials.astro';
 import FAQ from '../components/sections/FAQ.astro';
 import FinalCTA from '../components/sections/FinalCTA.astro';
+import { organizationSchema, websiteSchema, softwareAppSchema } from '../utils/schema';
+
+const schemas = [organizationSchema(), websiteSchema(), softwareAppSchema()];
 ---
 
-<LandingLayout>
+<LandingLayout schemas={schemas}>
 	<Hero />
 	<SocialProof />
 	<ProblemStatement />

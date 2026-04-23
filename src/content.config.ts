@@ -14,6 +14,10 @@ const blog = defineCollection({
 			pubDate: z.coerce.date(),
 			updatedDate: z.coerce.date().optional(),
 			heroImage: z.optional(image()),
+			author: z.string().default('Tim Satu Gizi'),
+			tags: z.array(z.string()).optional(),
+			category: z.string().optional(),
+			draft: z.boolean().default(false),
 		}),
 });
 

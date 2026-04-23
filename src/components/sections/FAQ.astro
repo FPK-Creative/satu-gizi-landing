@@ -1,4 +1,6 @@
 ---
+import { faqSchema } from '../../utils/schema';
+
 const faqItems = [
 	{
 		question: 'Apakah benar-benar gratis untuk SPPG MBG?',
@@ -78,6 +80,9 @@ const faqItems = [
 		</div>
 	</div>
 </section>
+
+<!-- FAQ Structured Data -->
+<script type="application/ld+json" set:html={JSON.stringify(faqSchema(faqItems))} />
 
 <script>
 	const accordion = document.getElementById('faq-accordion');

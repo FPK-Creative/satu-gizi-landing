@@ -1,63 +1,135 @@
 ---
-import AboutHeroImage from '../assets/blog-placeholder-about.jpg';
-import Layout from '../layouts/BlogPost.astro';
+import LandingLayout from '../layouts/LandingLayout.astro';
+import { breadcrumbSchema } from '../utils/schema';
+import { SITE_URL } from '../consts';
+
+const schemas = [
+	breadcrumbSchema([
+		{ name: 'Beranda', url: SITE_URL },
+		{ name: 'Tentang Kami', url: `${SITE_URL}/about/` },
+	]),
+];
+
+const title = 'Tentang Satu Gizi — Platform Gizi Indonesia';
+const description =
+	'Satu Gizi adalah platform edukasi gizi komprehensif yang menghubungkan akademisi, praktisi kesehatan, dan masyarakat dalam ekosistem pengetahuan gizi terpadu. Kenali misi, visi, dan nilai-nilai kami.';
 ---
 
-<Layout
-	title="About Me"
-	description="Lorem ipsum dolor sit amet"
-	pubDate={new Date('August 08 2021')}
-	heroImage={AboutHeroImage}
->
-	<p>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-		labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo
-		viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam
-		adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus
-		et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus
-		vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque
-		sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
-	</p>
+<LandingLayout title={title} description={description} schemas={schemas}>
+	<section class="py-16 sm:py-20 lg:py-24 bg-white">
+		<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="text-center mb-12" data-reveal>
+				<h1 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-sg-charcoal mb-4">
+					Tentang Satu Gizi
+				</h1>
+				<p class="text-lg text-sg-gray max-w-2xl mx-auto">
+					Gizi yang Tepat, Dimulai dari Satu Langkah
+				</p>
+			</div>
 
-	<p>
-		Morbi tristique senectus et netus. Id semper risus in hendrerit gravida rutrum quisque non
-		tellus. Habitasse platea dictumst quisque sagittis purus sit amet. Tellus molestie nunc non
-		blandit massa. Cursus vitae congue mauris rhoncus. Accumsan tortor posuere ac ut. Fringilla urna
-		porttitor rhoncus dolor. Elit ullamcorper dignissim cras tincidunt lobortis. In cursus turpis
-		massa tincidunt dui ut ornare lectus. Integer feugiat scelerisque varius morbi enim nunc.
-		Bibendum neque egestas congue quisque egestas diam. Cras ornare arcu dui vivamus arcu felis
-		bibendum. Dignissim suspendisse in est ante in nibh mauris. Sed tempus urna et pharetra pharetra
-		massa massa ultricies mi.
-	</p>
+			<div class="prose prose-lg max-w-none" data-reveal>
+				<div class="bg-sg-cream rounded-2xl p-8 sm:p-10 mb-10">
+					<h2 class="font-heading text-2xl font-bold text-sg-green-dark mb-4">Siapa Kami?</h2>
+					<p class="text-sg-charcoal leading-relaxed">
+						<strong>Satu Gizi</strong> adalah platform edukasi gizi komprehensif yang
+						menghubungkan akademisi, praktisi kesehatan, dan masyarakat dalam satu ekosistem
+						pengetahuan gizi terpadu di Indonesia. Kami menyatukan ilmu gizi berbasis bukti
+						dengan praktik kehidupan sehari-hari untuk menciptakan Indonesia yang lebih sehat.
+					</p>
+				</div>
 
-	<p>
-		Mollis nunc sed id semper risus in. Convallis a cras semper auctor neque. Diam sit amet nisl
-		suscipit. Lacus viverra vitae congue eu consequat ac felis donec. Egestas integer eget aliquet
-		nibh praesent tristique magna sit amet. Eget magna fermentum iaculis eu non diam. In vitae
-		turpis massa sed elementum. Tristique et egestas quis ipsum suspendisse ultrices. Eget lorem
-		dolor sed viverra ipsum. Vel turpis nunc eget lorem dolor sed viverra. Posuere ac ut consequat
-		semper viverra nam. Laoreet suspendisse interdum consectetur libero id faucibus. Diam phasellus
-		vestibulum lorem sed risus ultricies tristique. Rhoncus dolor purus non enim praesent elementum
-		facilisis. Ultrices tincidunt arcu non sodales neque. Tempus egestas sed sed risus pretium quam
-		vulputate. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare. Fringilla
-		urna porttitor rhoncus dolor purus non. Amet dictum sit amet justo donec enim.
-	</p>
+				<div class="grid sm:grid-cols-2 gap-8 mb-10">
+					<div class="bg-sg-green-light/40 rounded-2xl p-6 sm:p-8">
+						<div class="w-12 h-12 bg-sg-green rounded-xl flex items-center justify-center mb-4">
+							<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+							</svg>
+						</div>
+						<h3 class="font-heading text-xl font-bold text-sg-green-dark mb-2">Visi</h3>
+						<p class="text-sg-charcoal">
+							Menjadi platform rujukan utama edukasi gizi di Indonesia yang menghubungkan
+							akademisi, praktisi kesehatan, dan masyarakat dalam satu ekosistem pengetahuan
+							gizi terpadu.
+						</p>
+					</div>
+					<div class="bg-sg-orange-light/40 rounded-2xl p-6 sm:p-8">
+						<div class="w-12 h-12 bg-sg-orange rounded-xl flex items-center justify-center mb-4">
+							<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+							</svg>
+						</div>
+						<h3 class="font-heading text-xl font-bold text-sg-orange-dark mb-2">Misi</h3>
+						<p class="text-sg-charcoal">
+							Menyatukan ilmu gizi berbasis bukti dengan praktik kehidupan sehari-hari untuk
+							menciptakan Indonesia yang lebih sehat melalui edukasi gizi yang komprehensif dan
+							mudah dipahami.
+						</p>
+					</div>
+				</div>
 
-	<p>
-		Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Tortor posuere ac ut consequat semper
-		viverra. Tellus mauris a diam maecenas sed enim ut sem viverra. Venenatis urna cursus eget nunc
-		scelerisque viverra mauris in. Arcu ac tortor dignissim convallis aenean et tortor at. Curabitur
-		gravida arcu ac tortor dignissim convallis aenean et tortor. Egestas tellus rutrum tellus
-		pellentesque eu. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Ut enim
-		blandit volutpat maecenas volutpat blandit aliquam etiam. Id donec ultrices tincidunt arcu. Id
-		cursus metus aliquam eleifend mi.
-	</p>
+				<h2 class="font-heading text-2xl font-bold text-sg-charcoal mb-6">Nilai-Nilai Kami</h2>
+				<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-10">
+					<div class="border border-sg-gray-light rounded-xl p-5">
+						<h3 class="font-heading font-semibold text-sg-green-dark mb-1">Kesatuan</h3>
+						<p class="text-sm text-sg-gray">Menyatukan berbagai perspektif gizi dalam satu platform.</p>
+					</div>
+					<div class="border border-sg-gray-light rounded-xl p-5">
+						<h3 class="font-heading font-semibold text-sg-green-dark mb-1">Berbasis Bukti</h3>
+						<p class="text-sm text-sg-gray">Informasi kredibel dan ilmiah dari jurnal dan penelitian terkini.</p>
+					</div>
+					<div class="border border-sg-gray-light rounded-xl p-5">
+						<h3 class="font-heading font-semibold text-sg-green-dark mb-1">Mudah Diakses</h3>
+						<p class="text-sm text-sg-gray">Bahasa yang dipahami semua kalangan tanpa mengurangi substansi.</p>
+					</div>
+					<div class="border border-sg-gray-light rounded-xl p-5">
+						<h3 class="font-heading font-semibold text-sg-green-dark mb-1">Kolaboratif</h3>
+						<p class="text-sm text-sg-gray">Mendorong kerja sama interprofesional antara tenaga kesehatan.</p>
+					</div>
+					<div class="border border-sg-gray-light rounded-xl p-5">
+						<h3 class="font-heading font-semibold text-sg-green-dark mb-1">Terpercaya</h3>
+						<p class="text-sm text-sg-gray">Sumber informasi yang dapat diandalkan untuk keputusan kesehatan.</p>
+					</div>
+				</div>
 
-	<p>
-		Tempus quam pellentesque nec nam aliquam sem. Risus at ultrices mi tempus imperdiet. Id porta
-		nibh venenatis cras sed felis eget velit. Ipsum a arcu cursus vitae. Facilisis magna etiam
-		tempor orci eu lobortis elementum. Tincidunt dui ut ornare lectus sit. Quisque non tellus orci
-		ac. Blandit libero volutpat sed cras. Nec tincidunt praesent semper feugiat nibh sed pulvinar
-		proin gravida. Egestas integer eget aliquet nibh praesent tristique magna.
-	</p>
-</Layout>
+				<h2 class="font-heading text-2xl font-bold text-sg-charcoal mb-6">Apa yang Kami Tawarkan</h2>
+				<div class="space-y-4 mb-10">
+					<div class="flex gap-4 items-start">
+						<div class="shrink-0 w-8 h-8 bg-sg-green rounded-lg flex items-center justify-center text-white font-bold text-sm mt-0.5">1</div>
+						<div>
+							<h3 class="font-heading font-semibold text-sg-charcoal">Fitur MBG Gratis untuk SPPG</h3>
+							<p class="text-sg-gray text-sm">Perencanaan menu mingguan, analisis AKG, RAB otomatis, dan laporan BGN — gratis selamanya untuk Satuan Pelayanan Pangan.</p>
+						</div>
+					</div>
+					<div class="flex gap-4 items-start">
+						<div class="shrink-0 w-8 h-8 bg-sg-green rounded-lg flex items-center justify-center text-white font-bold text-sm mt-0.5">2</div>
+						<div>
+							<h3 class="font-heading font-semibold text-sg-charcoal">Kalkulator Klinis Pro</h3>
+							<p class="text-sg-gray text-sm">FNCA, SQ-FFQ, Z-score WHO, kebutuhan energi DM/CKD — tools klinis berbasis referensi resmi untuk ahli gizi dan peneliti.</p>
+						</div>
+					</div>
+					<div class="flex gap-4 items-start">
+						<div class="shrink-0 w-8 h-8 bg-sg-green rounded-lg flex items-center justify-center text-white font-bold text-sm mt-0.5">3</div>
+						<div>
+							<h3 class="font-heading font-semibold text-sg-charcoal">Database Pangan Indonesia</h3>
+							<p class="text-sg-gray text-sm">Menggunakan TKPI 2020 (Tabel Komposisi Pangan Indonesia) dari Kementerian Kesehatan RI sebagai database utama.</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="bg-sg-green text-white rounded-2xl p-8 sm:p-10 text-center" data-reveal>
+					<h2 class="font-heading text-2xl font-bold mb-3">Siap Memulai?</h2>
+					<p class="text-white/90 mb-6 max-w-lg mx-auto">
+						Bergabung dengan ribuan pengelola SPPG dan ahli gizi yang sudah menggunakan Satu Gizi.
+					</p>
+					<a
+						href="/#harga"
+						class="inline-block bg-white text-sg-green font-semibold px-8 py-3 rounded-xl hover:bg-sg-cream transition-colors"
+					>
+						Mulai Gratis Sekarang
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+</LandingLayout>
