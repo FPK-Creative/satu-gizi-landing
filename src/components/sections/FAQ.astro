@@ -1,0 +1,60 @@
+---
+import FAQAccordion from '../react/FAQAccordion.tsx';
+
+const faqItems = [
+	{
+		question: 'Apakah benar-benar gratis untuk SPPG MBG?',
+		answer: 'Ya, semua fitur MBG — perencanaan menu, analisis gizi, RAB, laporan — gratis selamanya. Tidak ada fitur MBG yang dikunci di balik paywall, tidak ada batas waktu trial.',
+	},
+	{
+		question: 'Apa bedanya fitur MBG dengan Kalkulator Pro?',
+		answer: 'Fitur MBG fokus pada operasional dapur SPPG: menu mingguan, analisis AKG, RAB, pesanan supplier, dan laporan BGN. Kalkulator Pro adalah tools klinis untuk ahli gizi dan peneliti: FNCA, SQ-FFQ, Z-score WHO, kebutuhan energi pasien DM/CKD, dll.',
+	},
+	{
+		question: 'Database makanan apa yang digunakan?',
+		answer: 'Kami menggunakan TKPI 2020 (Tabel Komposisi Pangan Indonesia) dari Kementerian Kesehatan RI sebagai database utama. Ke depannya akan diintegrasikan dengan database produk kemasan lokal.',
+	},
+	{
+		question: 'Bisakah banyak orang dalam satu SPPG menggunakan akun yang sama?',
+		answer: 'Ya, satu SPPG bisa mengundang banyak anggota tim dengan role berbeda: Kepala SPPG (owner), Admin, Ahli Gizi, dan Viewer. Tidak ada biaya tambahan untuk anggota tim.',
+	},
+	{
+		question: 'Apakah data kami aman?',
+		answer: 'Data setiap SPPG terisolasi sepenuhnya — tidak ada akses lintas tenant. Kami menggunakan infrastruktur yang aman dengan enkripsi data.',
+	},
+	{
+		question: 'Bagaimana cara pembayaran Kalkulator Pro?',
+		answer: 'Via Midtrans: transfer bank, QRIS, GoPay, OVO, dan kartu kredit/debit. Bisa pilih bulanan (Rp 49.000) atau tahunan (Rp 399.000, hemat 32%).',
+	},
+	{
+		question: 'Apakah bisa diakses dari HP?',
+		answer: 'Ya, Satu Gizi bisa diakses dari browser HP manapun (mobile-responsive). Aplikasi mobile native sedang dalam pengembangan.',
+	},
+	{
+		question: 'Bagaimana jika SPPG saya melayani banyak sekolah?',
+		answer: 'Bisa. Anda bisa input jumlah penerima per sekolah/posyandu secara terpisah, dan sistem akan mengagregasi kebutuhan bahan dan RAB untuk seluruh satuan layanan Anda.',
+	},
+	{
+		question: 'Apakah kalkulator klinisnya sudah tervalidasi?',
+		answer: 'Semua formula yang kami gunakan bersumber dari referensi resmi: WHO Child Growth Standards, KDOQI 2020, PERKENI 2021, Permenkes, dan jurnal peer-reviewed. Kami menyertakan referensi sumber di setiap kalkulator.',
+	},
+	{
+		question: 'Saya koordinator wilayah BGN. Bisa monitoring banyak SPPG sekaligus?',
+		answer: 'Ya, role Koordinator Wilayah bisa melihat status semua SPPG di wilayahnya — status meal plan, pemenuhan AKG, dan estimasi anggaran — dalam satu dashboard. Hubungi kami untuk setup akses koordinator.',
+	},
+];
+---
+
+<section class="py-16 sm:py-20 lg:py-24 bg-white">
+	<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+		<div class="text-center mb-12" data-reveal>
+			<h2 class="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold text-sg-charcoal">
+				Pertanyaan yang Sering Ditanyakan
+			</h2>
+		</div>
+
+		<div data-reveal>
+			<FAQAccordion client:visible items={faqItems} />
+		</div>
+	</div>
+</section>

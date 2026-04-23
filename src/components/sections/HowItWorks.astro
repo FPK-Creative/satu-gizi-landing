@@ -1,0 +1,53 @@
+---
+const steps = [
+	{
+		number: '01',
+		title: 'Daftar SPPG',
+		subtitle: '2 menit',
+		description: 'Isi nama SPPG, kabupaten/kota, dan data penanggung jawab. Akun langsung aktif, tidak perlu approval. Invite anggota tim via email.',
+	},
+	{
+		number: '02',
+		title: 'Setup Database & AKG',
+		subtitle: 'Otomatis',
+		description: 'Database TKPI 2020 sudah tersedia langsung. Standar AKG Permenkes sudah di-seed otomatis. Tambah satuan layanan (sekolah dan posyandu).',
+	},
+	{
+		number: '03',
+		title: 'Buat Menu & Analisis',
+		subtitle: 'Langsung',
+		description: 'Buat rencana menu mingguan dari library resep. Analisis nilai gizi langsung terhitung. RAB dan laporan siap export.',
+	},
+];
+---
+
+<section class="py-16 sm:py-20 lg:py-24 bg-sg-gray-light/40">
+	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+		<div class="text-center mb-14" data-reveal>
+			<h2 class="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold text-sg-charcoal">
+				Mulai dalam 3 Langkah
+			</h2>
+		</div>
+
+		<div class="grid md:grid-cols-3 gap-8 relative">
+			<!-- Connecting line (desktop only) -->
+			<div class="hidden md:block absolute top-12 left-[20%] right-[20%] h-0.5 bg-sg-green/20"></div>
+
+			{steps.map((step) => (
+				<div data-reveal class="relative text-center">
+					<!-- Number circle -->
+					<div class="relative z-10 mx-auto w-24 h-24 bg-white rounded-full border-4 border-sg-green/20 flex flex-col items-center justify-center shadow-sm">
+						<span class="font-mono text-2xl font-bold text-sg-green">{step.number}</span>
+						<span class="text-xs text-sg-gray">{step.subtitle}</span>
+					</div>
+					<h3 class="mt-5 font-heading text-lg font-semibold text-sg-charcoal">
+						{step.title}
+					</h3>
+					<p class="mt-2 text-sm text-sg-gray leading-relaxed max-w-xs mx-auto">
+						{step.description}
+					</p>
+				</div>
+			))}
+		</div>
+	</div>
+</section>

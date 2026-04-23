@@ -1,0 +1,45 @@
+---
+const painPoints = [
+	{
+		icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>`,
+		title: 'Excel yang Tidak Efisien',
+		description: 'Perencanaan menu MBG masih dikerjakan manual di spreadsheet — rawan error, sulit diakses banyak orang, dan tidak bisa generate laporan otomatis.',
+	},
+	{
+		icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>`,
+		title: 'Analisis Gizi yang Makan Waktu',
+		description: 'Menghitung nilai gizi ratusan bahan makanan dan membandingkan dengan AKG memerlukan waktu berjam-jam setiap minggunya.',
+	},
+	{
+		icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>`,
+		title: 'Kalkulator Klinis yang Tersebar',
+		description: 'Ahli gizi menggunakan banyak tools berbeda untuk FNCA, Z-score balita, kebutuhan energi pasien — tidak terintegrasi dan tidak bisa disimpan riwayatnya.',
+	},
+];
+---
+
+<section class="py-16 sm:py-20 lg:py-24 bg-white">
+	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+		<div class="text-center mb-12" data-reveal>
+			<h2 class="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold text-sg-charcoal">
+				Masalah yang Kami Selesaikan
+			</h2>
+		</div>
+
+		<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+			{painPoints.map((point) => (
+				<div data-reveal class="bg-sg-gray-light/50 rounded-xl p-6 lg:p-8 hover:shadow-lg transition-shadow">
+					<div class="w-12 h-12 bg-sg-green-light rounded-lg flex items-center justify-center text-sg-green mb-4">
+						<Fragment set:html={point.icon} />
+					</div>
+					<h3 class="font-heading text-lg font-semibold text-sg-charcoal mb-2">
+						{point.title}
+					</h3>
+					<p class="text-sm text-sg-gray leading-relaxed">
+						{point.description}
+					</p>
+				</div>
+			))}
+		</div>
+	</div>
+</section>

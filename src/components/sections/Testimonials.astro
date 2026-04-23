@@ -1,0 +1,52 @@
+---
+const testimonials = [
+	{
+		quote: 'Sebelumnya kami butuh 3–4 jam setiap minggu untuk buat laporan MBG ke BGN. Sekarang tinggal klik export, selesai dalam 5 menit.',
+		name: 'Ibu Ratna',
+		role: 'Kepala SPPG',
+		location: 'Kabupaten Semarang',
+	},
+	{
+		quote: 'Kalkulator Z-score balita-nya akurat dan hasilnya langsung bisa dicetak untuk rekam medis. Jauh lebih praktis dari software lama kami.',
+		name: 'Bapak Dimas',
+		role: 'Ahli Gizi',
+		location: 'RSUD Temanggung',
+	},
+	{
+		quote: 'Mahasiswa saya sekarang pakai Satu Gizi untuk skripsi — data FNCA-nya konsisten dan mudah dicite.',
+		name: 'Dr. Siti',
+		role: 'Dosen Gizi',
+		location: 'Universitas Diponegoro',
+	},
+];
+---
+
+<section class="py-16 sm:py-20 lg:py-24 bg-sg-gray-light/40">
+	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+		<div class="text-center mb-12" data-reveal>
+			<h2 class="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold text-sg-charcoal">
+				Dipercaya Pengelola Gizi Indonesia
+			</h2>
+		</div>
+
+		<div class="grid md:grid-cols-3 gap-6 lg:gap-8">
+			{testimonials.map((testimonial) => (
+				<div data-reveal class="bg-white rounded-xl p-6 lg:p-8 shadow-sm border border-sg-gray-light/80">
+					<!-- Quote icon -->
+					<svg class="w-8 h-8 text-sg-green/20 mb-4" fill="currentColor" viewBox="0 0 24 24">
+						<path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zM0 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151C7.546 6.068 5.983 8.789 5.983 11H10v10H0z"/>
+					</svg>
+					<p class="text-sm text-sg-charcoal leading-relaxed mb-6">
+						"{testimonial.quote}"
+					</p>
+					<div>
+						<p class="font-heading font-semibold text-sm text-sg-charcoal">
+							— {testimonial.name}, {testimonial.role}
+						</p>
+						<p class="text-xs text-sg-gray mt-0.5">{testimonial.location}</p>
+					</div>
+				</div>
+			))}
+		</div>
+	</div>
+</section>

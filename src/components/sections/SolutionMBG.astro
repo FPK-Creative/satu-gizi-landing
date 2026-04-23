@@ -1,0 +1,68 @@
+---
+const features = [
+	{
+		title: 'Perencanaan Menu Berbasis Resep',
+		description: 'Simpan resep di library, tambahkan ke meal plan harian — gramasi per kategori penerima terhitung otomatis. Clone menu dari minggu sebelumnya dalam 1 klik.',
+		checks: ['Library resep digital', 'Clone menu mingguan', 'Gramasi otomatis'],
+	},
+	{
+		title: 'Analisis Nilai Gizi Real-Time',
+		description: 'Bandingkan kandungan gizi menu vs standar AKG secara otomatis. Indikator traffic light: hijau (terpenuhi), kuning (kurang), merah (sangat kurang).',
+		checks: ['Indikator traffic light', 'Standar AKG otomatis', 'Deteksi hari kurang'],
+	},
+	{
+		title: 'RAB & Food Cost Otomatis',
+		description: 'Input harga bahan sekali — sistem hitung kebutuhan bahan (kg) dan biaya per anak per hari. Breakdown per sekolah, per kategori penerima.',
+		checks: ['Biaya per anak/hari', 'Breakdown per sekolah', 'Estimasi anggaran'],
+	},
+	{
+		title: 'Laporan Siap Cetak',
+		description: 'Export RAB, analisis gizi, rekap penerima ke PDF dan Excel. Format dokumen dengan kop SPPG. Pesanan WhatsApp ke supplier — copy-paste langsung.',
+		checks: ['Export PDF & Excel', 'Kop SPPG otomatis', 'Pesan WhatsApp supplier'],
+	},
+];
+---
+
+<section id="fitur" class="py-16 sm:py-20 lg:py-24 bg-white">
+	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+		<!-- Badge + Headline -->
+		<div class="text-center mb-14" data-reveal>
+			<span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-sg-green-light text-sg-green text-xs font-semibold mb-4">
+				<span class="w-2 h-2 rounded-full bg-sg-green animate-pulse"></span>
+				GRATIS SELAMANYA untuk SPPG
+			</span>
+			<h2 class="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold text-sg-charcoal">
+				Semua yang Dibutuhkan SPPG MBG
+			</h2>
+		</div>
+
+		<!-- Features Grid -->
+		<div class="grid md:grid-cols-2 gap-6 lg:gap-8">
+			{features.map((feature, i) => (
+				<div data-reveal class="bg-sg-white border border-sg-gray-light rounded-xl p-6 lg:p-8 hover:shadow-lg transition-shadow">
+					<div class="flex items-start gap-4">
+						<div class="shrink-0 w-10 h-10 bg-sg-green-light rounded-lg flex items-center justify-center text-sg-green font-heading font-bold text-sm">
+							{i + 1}
+						</div>
+						<div>
+							<h3 class="font-heading text-lg font-semibold text-sg-charcoal mb-2">
+								{feature.title}
+							</h3>
+							<p class="text-sm text-sg-gray leading-relaxed mb-4">
+								{feature.description}
+							</p>
+							<ul class="space-y-1.5">
+								{feature.checks.map((check) => (
+									<li class="flex items-center gap-2 text-sm text-sg-charcoal">
+										<svg class="w-4 h-4 text-sg-green shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+										{check}
+									</li>
+								))}
+							</ul>
+						</div>
+					</div>
+				</div>
+			))}
+		</div>
+	</div>
+</section>

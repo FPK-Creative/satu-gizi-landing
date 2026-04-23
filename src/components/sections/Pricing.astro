@@ -1,0 +1,153 @@
+---
+const plans = [
+	{
+		name: 'MBG Platform',
+		price: 'GRATIS',
+		priceSuffix: 'SELAMANYA',
+		badge: '🟢 Untuk SPPG Program MBG',
+		badgeColor: 'bg-sg-green-light text-sg-green',
+		features: [
+			'Meal plan & menu library',
+			'Analisis nilai gizi vs AKG',
+			'RAB & food cost otomatis',
+			'Rekap pesanan supplier',
+			'Export PDF & Excel',
+			'Dashboard monitoring',
+			'Multi-user per SPPG',
+			'Database TKPI 2020',
+		],
+		cta: 'Daftar Sekarang — Gratis',
+		ctaStyle: 'bg-sg-green text-white hover:bg-sg-green-dark',
+		microCopy: 'Tidak perlu kartu kredit. Tidak ada fitur yang dikunci.',
+		highlighted: false,
+	},
+	{
+		name: 'Kalkulator Pro',
+		price: 'Rp 49.000',
+		priceSuffix: '/bulan',
+		yearlyPrice: 'Rp 399.000/tahun (hemat 32%)',
+		badge: '💙 Untuk Ahli Gizi & Peneliti',
+		popularBadge: 'Paling Populer',
+		badgeColor: 'bg-sg-blue/10 text-sg-blue',
+		features: [
+			'Semua fitur MBG',
+			'FNCA — analisis komposisi gizi',
+			'SQ-FFQ — food frequency questionnaire',
+			'Kalkulator dewasa, maternal, balita, anak',
+			'Kalkulator CKD & Diabetes',
+			'Riwayat sesi tersimpan',
+			'Export PDF hasil kalkulator',
+			'Akses dari semua device',
+		],
+		cta: 'Mulai 14 Hari Gratis',
+		ctaStyle: 'bg-sg-orange text-white hover:bg-sg-orange/90',
+		microCopy: 'Batalkan kapan saja. Tidak ada pertanyaan.',
+		highlighted: true,
+	},
+	{
+		name: 'Pay-per-use',
+		price: 'mulai Rp 5.000',
+		priceSuffix: '/sesi',
+		badge: '💛 Untuk Penggunaan Sesekali',
+		badgeColor: 'bg-sg-yellow/10 text-yellow-700',
+		description: 'Beli kredit untuk kalkulator tertentu saja — tanpa berlangganan',
+		prices: [
+			'FNCA: Rp 5.000/sesi',
+			'SQ-FFQ: Rp 10.000/sesi',
+		],
+		cta: 'Lihat Harga Kredit',
+		ctaStyle: 'bg-sg-gray-light text-sg-charcoal hover:bg-sg-gray-light/70',
+		microCopy: '',
+		highlighted: false,
+	},
+];
+---
+
+<section id="harga" class="py-16 sm:py-20 lg:py-24 bg-white">
+	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+		<div class="text-center mb-14" data-reveal>
+			<h2 class="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold text-sg-charcoal">
+				Harga yang Jujur
+			</h2>
+		</div>
+
+		<div class="grid md:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto items-start">
+			{plans.map((plan) => (
+				<div
+					data-reveal
+					class:list={[
+						'rounded-2xl p-6 lg:p-8 border',
+						plan.highlighted
+							? 'bg-white border-sg-orange shadow-xl scale-[1.02] relative'
+							: 'bg-sg-white border-sg-gray-light',
+					]}
+				>
+					{plan.popularBadge && (
+						<span class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-sg-orange text-white text-xs font-semibold rounded-full">
+							{plan.popularBadge}
+						</span>
+					)}
+
+					<span class={`inline-block text-xs font-medium px-2.5 py-1 rounded-full ${plan.badgeColor} mb-4`}>
+						{plan.badge}
+					</span>
+
+					<h3 class="font-heading text-xl font-bold text-sg-charcoal">
+						{plan.name}
+					</h3>
+
+					<div class="mt-3">
+						<span class="font-mono text-2xl lg:text-3xl font-bold text-sg-charcoal">
+							{plan.price}
+						</span>
+						<span class="text-sm text-sg-gray">{plan.priceSuffix}</span>
+					</div>
+
+					{plan.yearlyPrice && (
+						<p class="mt-1 text-xs text-sg-gray">{plan.yearlyPrice}</p>
+					)}
+
+					{plan.description && (
+						<p class="mt-3 text-sm text-sg-gray">{plan.description}</p>
+					)}
+
+					<hr class="my-5 border-sg-gray-light" />
+
+					<!-- Features -->
+					{plan.features && (
+						<ul class="space-y-2.5 mb-6">
+							{plan.features.map((feature) => (
+								<li class="flex items-start gap-2 text-sm text-sg-charcoal">
+									<svg class="w-4 h-4 text-sg-green shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+									{feature}
+								</li>
+							))}
+						</ul>
+					)}
+
+					{plan.prices && (
+						<ul class="space-y-2 mb-6">
+							{plan.prices.map((price) => (
+								<li class="text-sm text-sg-charcoal">
+									{price}
+								</li>
+							))}
+						</ul>
+					)}
+
+					<a href="/register" class={`block w-full text-center px-5 py-3 rounded-lg font-semibold text-sm transition-colors ${plan.ctaStyle}`}>
+						{plan.cta}
+					</a>
+
+					{plan.microCopy && (
+						<p class="mt-2 text-xs text-center text-sg-gray">{plan.microCopy}</p>
+					)}
+				</div>
+			))}
+		</div>
+
+		<p class="mt-8 text-center text-xs text-sg-gray">
+			Semua harga dalam Rupiah. Pembayaran via transfer bank, QRIS, dan e-wallet melalui Midtrans.
+		</p>
+	</div>
+</section>
