@@ -5,15 +5,16 @@ import { SITE_TITLE } from '../consts';
 <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
 	<nav class="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 h-16 lg:h-20">
 		<!-- Logo -->
-		<a href="/" class="flex items-center gap-2 text-white font-heading font-bold text-xl tracking-tight">
-			<span class="text-sg-green-dark">Satu</span><span class="text-sg-green">Gizi</span>
+		<a href="/" class="flex items-center gap-2 font-heading font-bold text-xl tracking-tight">
+			<img src="/assets/icon.png" alt="Satu Gizi" class="h-8 lg:h-9 w-auto" />
+			<span><span class="text-sg-green-dark">Satu</span><span class="text-sg-green">Gizi</span></span>
 		</a>
 
 		<!-- Desktop Nav Links -->
 		<div class="hidden lg:flex items-center gap-8">
-			<a href="#fitur" class="text-sm font-medium text-sg-charcoal/80 hover:text-sg-green transition-colors">Fitur MBG</a>
-			<a href="#kalkulator" class="text-sm font-medium text-sg-charcoal/80 hover:text-sg-green transition-colors">Kalkulator</a>
-			<a href="#harga" class="text-sm font-medium text-sg-charcoal/80 hover:text-sg-green transition-colors">Harga</a>
+			<a href="/#fitur" class="text-sm font-medium text-sg-charcoal/80 hover:text-sg-green transition-colors">Fitur MBG</a>
+			<a href="/#kalkulator" class="text-sm font-medium text-sg-charcoal/80 hover:text-sg-green transition-colors">Kalkulator</a>
+			<a href="/#harga" class="text-sm font-medium text-sg-charcoal/80 hover:text-sg-green transition-colors">Harga</a>
 			<a href="/blog" class="text-sm font-medium text-sg-charcoal/80 hover:text-sg-green transition-colors">Blog</a>
 		</div>
 
@@ -44,9 +45,9 @@ import { SITE_TITLE } from '../consts';
 	<!-- Mobile Menu -->
 	<div id="mobile-menu" class="lg:hidden hidden bg-white border-t border-sg-gray-light shadow-lg">
 		<div class="px-4 py-4 space-y-1">
-			<a href="#fitur" class="block px-3 py-2 text-base font-medium text-sg-charcoal hover:bg-sg-green-light rounded-lg">Fitur MBG</a>
-			<a href="#kalkulator" class="block px-3 py-2 text-base font-medium text-sg-charcoal hover:bg-sg-green-light rounded-lg">Kalkulator</a>
-			<a href="#harga" class="block px-3 py-2 text-base font-medium text-sg-charcoal hover:bg-sg-green-light rounded-lg">Harga</a>
+			<a href="/#fitur" class="block px-3 py-2 text-base font-medium text-sg-charcoal hover:bg-sg-green-light rounded-lg">Fitur MBG</a>
+			<a href="/#kalkulator" class="block px-3 py-2 text-base font-medium text-sg-charcoal hover:bg-sg-green-light rounded-lg">Kalkulator</a>
+			<a href="/#harga" class="block px-3 py-2 text-base font-medium text-sg-charcoal hover:bg-sg-green-light rounded-lg">Harga</a>
 			<a href="/blog" class="block px-3 py-2 text-base font-medium text-sg-charcoal hover:bg-sg-green-light rounded-lg">Blog</a>
 			<hr class="my-2 border-sg-gray-light" />
 			<a href="/login" class="block px-3 py-2 text-base font-medium text-sg-charcoal hover:bg-sg-green-light rounded-lg">Masuk</a>
@@ -91,8 +92,8 @@ import { SITE_TITLE } from '../consts';
 		toggle.setAttribute('aria-expanded', String(isOpen));
 	});
 
-	// Close mobile menu on link click
-	menu?.querySelectorAll('a[href^="#"]').forEach(link => {
+	// Close mobile menu on any link click
+	menu?.querySelectorAll('a').forEach(link => {
 		link.addEventListener('click', () => {
 			menu.classList.add('hidden');
 			hamburgerIcon?.classList.remove('hidden');
