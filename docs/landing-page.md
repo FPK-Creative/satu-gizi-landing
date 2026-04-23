@@ -156,7 +156,7 @@ Kombinasi ikon: daun + garis grafik nutrisi — menyimbolkan alam (gizi) bertemu
    Menghitung nilai gizi ratusan bahan makanan dan membandingkan dengan AKG memerlukan waktu berjam-jam setiap minggunya.
 
 3. **🔧 Kalkulator Klinis yang Tersebar**  
-   Ahli gizi menggunakan banyak tools berbeda untuk FNCA, Z-score balita, kebutuhan energi pasien — tidak terintegrasi dan tidak bisa disimpan riwayatnya.
+   Ahli gizi menggunakan banyak tools berbeda untuk NUSA (Nutrient Universal SatuGizi Analysis), Z-score balita, kebutuhan energi pasien — tidak terintegrasi dan tidak bisa disimpan riwayatnya.
 
 ---
 
@@ -204,7 +204,7 @@ Kombinasi ikon: daun + garis grafik nutrisi — menyimbolkan alam (gizi) bertemu
 
 | Icon | Nama | Deskripsi | Badge |
 |---|---|---|---|
-| 🔬 | FNCA | Analisis komposisi zat gizi dari daftar makanan | Pro |
+| 🔬 | NUSA | Analisis komposisi zat gizi dari daftar makanan | Pro |
 | 📋 | SQ-FFQ | Estimasi asupan habitual dari frekuensi konsumsi | Pro |
 | 👤 | Dewasa Sehat | BMI, BMR, TDEE, distribusi makronutrien | Gratis + Pro |
 | 🤰 | Maternal | Kebutuhan gizi ibu hamil & menyusui, KEK | Gratis + Pro |
@@ -264,7 +264,7 @@ Kombinasi ikon: daun + garis grafik nutrisi — menyimbolkan alam (gizi) bertemu
 - Badge: 💙 Untuk Ahli Gizi & Peneliti
 - Fitur (checklist):
   - ✅ Semua fitur MBG
-  - ✅ FNCA — analisis komposisi gizi
+  - ✅ NUSA — analisis komposisi gizi
   - ✅ SQ-FFQ — food frequency questionnaire
   - ✅ Kalkulator dewasa, maternal, balita, anak
   - ✅ Kalkulator CKD & Diabetes
@@ -279,7 +279,7 @@ Kombinasi ikon: daun + garis grafik nutrisi — menyimbolkan alam (gizi) bertemu
 - Badge: 💛 Untuk Penggunaan Sesekali
 - Keterangan: Beli kredit untuk kalkulator tertentu saja — tanpa berlangganan
 - Daftar harga:
-  - FNCA: Rp 5.000/sesi
+  - NUSA: Rp 5.000/sesi
   - SQ-FFQ: Rp 10.000/sesi
 - CTA: `Lihat Harga Kredit`
 
@@ -301,7 +301,7 @@ Kombinasi ikon: daun + garis grafik nutrisi — menyimbolkan alam (gizi) bertemu
 > *"Kalkulator Z-score balita-nya akurat dan hasilnya langsung bisa dicetak untuk rekam medis. Jauh lebih praktis dari software lama kami."*  
 > — **Bapak Dimas, Ahli Gizi**, RSUD Temanggung
 
-> *"Mahasiswa saya sekarang pakai Satu Gizi untuk skripsi — data FNCA-nya konsisten dan mudah dicite."*  
+> *"Mahasiswa saya sekarang pakai Satu Gizi untuk skripsi — data NUSA-nya konsisten dan mudah dicite."*  
 > — **Dr. Siti, Dosen Gizi**, Universitas Diponegoro
 
 ---
@@ -317,7 +317,7 @@ Kombinasi ikon: daun + garis grafik nutrisi — menyimbolkan alam (gizi) bertemu
    Ya, semua fitur MBG — perencanaan menu, analisis gizi, RAB, laporan — gratis selamanya. Tidak ada fitur MBG yang dikunci di balik paywall, tidak ada batas waktu trial.
 
 2. **Apa bedanya fitur MBG dengan Kalkulator Pro?**  
-   Fitur MBG fokus pada operasional dapur SPPG: menu mingguan, analisis AKG, RAB, pesanan supplier, dan laporan BGN. Kalkulator Pro adalah tools klinis untuk ahli gizi dan peneliti: FNCA, SQ-FFQ, Z-score WHO, kebutuhan energi pasien DM/CKD, dll.
+   Fitur MBG fokus pada operasional dapur SPPG: menu mingguan, analisis AKG, RAB, pesanan supplier, dan laporan BGN. Kalkulator Pro adalah tools klinis untuk ahli gizi dan peneliti: NUSA (Nutrient Universal SatuGizi Analysis), SQ-FFQ, Z-score WHO, kebutuhan energi pasien DM/CKD, dll.
 
 3. **Database makanan apa yang digunakan?**  
    Kami menggunakan TKPI 2020 (Tabel Komposisi Pangan Indonesia) dari Kementerian Kesehatan RI sebagai database utama. Ke depannya akan diintegrasikan dengan database produk kemasan lokal.
@@ -425,7 +425,7 @@ Kombinasi ikon: daun + garis grafik nutrisi — menyimbolkan alam (gizi) bertemu
 > Satu Gizi — Platform MBG & Kalkulator Gizi Indonesia
 
 ### Meta Description
-> Platform gratis untuk pengelola SPPG MBG: perencanaan menu, analisis nilai gizi vs AKG, RAB otomatis, dan laporan BGN. Plus kalkulator klinis untuk ahli gizi: FNCA, SQ-FFQ, Z-score balita, dan lebih banyak lagi.
+> Platform gratis untuk pengelola SPPG MBG: perencanaan menu, analisis nilai gizi vs AKG, RAB otomatis, dan laporan BGN. Plus kalkulator klinis untuk ahli gizi: NUSA (Nutrient Universal SatuGizi Analysis), SQ-FFQ, Z-score balita, dan lebih banyak lagi.
 
 ### Open Graph
 - OG Image: mockup dashboard + tagline di background hijau
